@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+body{
+    background: linear-gradient(200deg, #6c6ce6, #6200ff);
+    width: 100%;
+    height: 200vh;
+}
+
+aside{
+    background: aliceblue;
+    width: 300px;
+    height: 100vh;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    position: fixed;
+}
+
+
+
+.head{
+    /* border: solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head .logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.head .logo img{
+    width: 45px;
+}
+
+.head, .logo, .logo-title,
+.head, .bx-menu{
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+.nav{
+    /* border: solid; */
+    border-top: solid rgb(191, 230, 243);
+    margin-top: 20px;
+    padding: 25px;
+    flex: 1;
+}
+aside:not(aside.close) .nav{
+    overflow-y: auto;
+
+}
+
+
+.nav::-webkit-scrollbar{
+    width: 0;
+}
+
+.menu{
+    /* border: solid; */
+    gap: 10px;
+    border-radius: 20px;
+    color: #000;
+    opacity: 0.8;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    justify-content: space-between;
+}
+
+.menu:hover{
+    background: rgb(212, 243, 243);
+    color: black;
+}
+
+.menu i{
+    font-size: 25px;
+}
+
+.menu span{
+    font-weight: 500;
+    font-size: 18px;
+    flex: 1;
+}
+
+.foot{
+    /* border: solid; */
+    padding-top: 20px;
+}
+
+.profile{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.profile .info{
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .info .name{
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.profile .info .job{
+    font-size: 13px;
+}
+
+.menu-logout{
+     color: red;
+     background: rgb(227, 227, 227);
+     margin-top: 15px;
+}
+
+.menu-logout:hover{
+    background: lightcyan;
+    color: red;
+}
+
+
+/* Toggle Classes */
+
+aside.close{
+    width: 145px;
+}
+
+aside.close .logo{
+    display: none;
+}
+
+aside.close .bx-menu{
+    width: 100%;
+    text-align: center;
+}
+
+aside.close .menu span{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 120px;
+    font-size: 16px;
+    opacity: 0;
+    transition: .3s;
+    pointer-events: none;
+}
+
+aside.close .menu i:nth-child(1){
+    width: 100%;
+    text-align: center;
+    /* border: solid; */
+}
+
+aside.close .menu i:nth-child(3){
+    display: none;
+}
+
+aside.close .menu:hover span{
+    margin-left: 110px;
+    opacity: 1;
+}
+
+.nav .menu.active{
+    background: linear-gradient(200deg, #6c6ce6, #6200ff);
+    color: aliceblue;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);;
+}
+
+aside.close .menu-dropdown{
+    position: relative;
+}
+
+aside.close .menu-dropdown .sub-menu{
+    position: absolute;
+    background: #fff;
+    border: solid;
+    padding: 0 10px 10px;
+    margin-left: 120px;
+    border-radius: 12px;
+    top: -45px;
+    z-index: 2;
+}
+
+.menu-dropdown .sub-menu{
+    display: none;
+    padding-left: 45px;
+}
+
+.sub-menu .span{
+    font-size: 14px;
+}
+
+aside.close .profile{
+    /* border: solid; */
+    display: flex;
+    justify-content: center;
+}
+
+aside.close .profile .info{
+    display: none;
+}

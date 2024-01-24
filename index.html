@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Side Bar Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    
+
+    <aside>
+        
+        <div class="head">
+            <div class="logo">
+                <img src="imgs/logo-img.jpg" alt="logo">
+                <h2 class="logo-title">Side <span>Bar</span></h2>
+            </div>
+            <i class='bx bx-menu hamburger-menu'></i>
+        </div>
+
+       
+        <div class="nav">
+
+            <div class="menu">
+                <i class='bx bxs-time'></i>
+                <span>Dashboard</span>
+            </div>
+            
+            <div class="menu">
+                <i class='bx bxs-edit-alt'></i>
+                <span>Posts</span>
+            </div>
+            
+            <div class="menu">
+                <i class='bx bxs-check-square'></i>
+                <span>Tasks</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">Assignment</span>
+                    <span class="menu">Completed</span>
+                </div>
+            </div>
+            
+            <div class="menu">
+                <i class='bx bxs-bell'></i>
+                <span>Notifications</span>
+            </div>
+            
+            <div class="menu">
+                <i class='bx bxs-group'></i>
+                <span>Teams</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">Developer</span>
+                    <span class="menu">Programmer</span>
+                    <span class="menu">Engineer</span>
+                </div>
+            </div>
+            
+            <div class="menu">
+                <i class='bx bxs-cog'></i>
+                <span>Settings</span>
+            </div>
+            
+        </div>
+
+        <div class="foot">
+            <div class="profile">
+                <img src="imgs/vector-img.png" alt="proflie">
+                <div class="info">
+                    <span class="name">Kevin Bacon</span>
+                    <span class="occup">Worker</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu menu-logout">
+            <i class="bx bx-log-out"></i>
+            <span>Logout</span>
+        </div>
+        
+
+    </aside>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $('.hamburger-menu').click(function(){
+            $('aside').toggleClass('close')
+        });
+
+
+        $('.menu').click(function(){
+           $(this).siblings('.menu').removeClass('active');
+           $(this).addClass('active');
+
+           $(this).siblings('.menu-dropdown').children('.sub-menu').slideUp();
+           $(this).next('.menu-dropdown').children('.sub-menu').slideToggle();
+
+           $(this).next().siblings('.menu-dropdown').children('.sub-menu').children('.menu').removeClass('active');
+        });
+    </script>
+</body>
+</html>
